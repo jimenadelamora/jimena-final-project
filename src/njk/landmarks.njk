@@ -1,0 +1,44 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Recreations{% endblock %}
+
+{% block page_description %}The index search description for this page goes here.{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Austin recreations</h1>
+  <p>Austin is known as the live music capital of the world. But besides great music, there are many other things to do in the Texas capital.</p>
+  <h2>Landmarks</h2>
+  <p>Places to visit!</p>
+  <div class="row">
+  {% for land in austin.landmarks %}
+      <div class="col">
+        <img src="img/{{ imagebw }}.jpg" alt="" class="img-fluid">
+        <h3><a href="landmarks/{{ land.slug }}.html">{{ land.name }}</a></h3>
+      </div>
+  {% endfor %}
+  </div>
+  <div>
+    <h2>Activities</h2>
+    <p>Things to do!</p>
+    <hr>
+    {% for fun in austin.activities %}
+      <h3><a href="{{ fun.url }}" target="_blank">{{ fun.activity }}</a></h3>
+      <p>{{ fun.date_time}}, {{ fun.address }}</p>
+      <hr>
+    {% endfor %}
+  </div>
+  <div>
+    <h2>Murals</h2>
+    <p>Things to look at!</p>
+    <hr>
+    {% for fun in austin.murals %}
+      <h3>{{ fun.name }}</h3>
+      <p><a href="{{ fun.map_location }}" target="_blank">{{ fun.address }}</a></p>
+      <p>{{ fun.latitude}}, {{ fun.longitude }}</p>
+      <hr>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
