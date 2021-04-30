@@ -7,20 +7,19 @@
   <p>Find the most delicious meal in the 512!</p>
     <ul class="list-unstyled">
       <div class= "row">
-      {# IDK HOW TO MAKE IT SPREAD AAA #}
-        <div class= "col-sm-12 col-lg-6">
-          {% for food in restaurants.restaurants %}
+      {% for food in restaurants.restaurants %}
+        <div class= "col-sm-6 col-lg-6">
           <li class="media">
             {# images are not showing up #}
-            <img src="{{ food.image }}" class="mr-3" alt="...">
+            <img src="img/{{ food.image }}" class="mr-3" alt="...">
             <div class="media-body">
               <h5 class="mt-0 mb-1"> {{ food.name }} </h5>
               <p>{{ food.address }}</p>
               <h6>{{ food.category }}</h6>
             </div>
           </li>
-          {% endfor %}
         </div>
+      {% endfor %}
       </div>
     </ul>
 </article>

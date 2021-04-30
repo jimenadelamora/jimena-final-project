@@ -13,7 +13,7 @@
   <div class="row">
   {% for land in austin.landmarks %}
       <div class="col">
-        <img src="img/{{ imagebw }}.jpg" alt="" class="img-fluid">
+        <img src="img/{{ land.imagebw }}" alt="" class="img-fluid">
         <h3><a href="landmarks/{{ land.slug }}.html">{{ land.name }}</a></h3>
       </div>
   {% endfor %}
@@ -24,7 +24,7 @@
     <hr>
     {% for fun in austin.activities %}
       <h3><a href="{{ fun.url }}" target="_blank">{{ fun.activity }}</a></h3>
-      <p>{{ fun.date_time}}, {{ fun.address }}</p>
+      <p>{{ fun.date_time }}, {{ fun.address }}</p>
       <hr>
     {% endfor %}
   </div>
