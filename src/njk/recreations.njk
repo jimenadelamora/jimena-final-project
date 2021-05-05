@@ -7,13 +7,13 @@
 {% block content %}
 <div class="container">
   <h1>Austin recreations</h1>
-  <p>Austin is known as the live music capital of the world. But besides great music, there are many other things to do in the Texas capital.</p>
+  <p>Austin is known as the Live Music Capital of the World® but that's just the beginning. Home to unique attractions and world-class museums, Texas' capital city has a soundtrack all its own. Spend a day exploring sculpture gardens and historic homes, zipline through the Hill Country or give the kids a hands-on experience at a number of STEM museums.</p>
   <h2>Landmarks</h2>
   <p>Places to visit!</p>
   <div class="row">
   {% for land in austin.landmarks %}
-      <div class="col">
-        <img src="img/{{ land.imagebw }}" alt="" class="img-fluid">
+      <div class="col-sm-6 col-lg-3">
+        <img src="img/landmarks/{{ land.imagebw }}" alt="" class="img-fluid">
         <h3><a href="landmarks/{{ land.slug }}.html">{{ land.name }}</a></h3>
       </div>
   {% endfor %}
@@ -25,19 +25,22 @@
     {% for fun in austin.activities %}
       <h3><a href="{{ fun.url }}" target="_blank">{{ fun.activity }}</a></h3>
       <p>{{ fun.date_time }}, {{ fun.address }}</p>
-      <hr>
     {% endfor %}
+    <hr>
   </div>
   <div>
     <h2>Murals</h2>
     <p>Things to look at!</p>
     <hr>
     {% for fun in austin.murals %}
-      <h3>{{ fun.name }}</h3>
+      <h3>"{{ fun.name }}"</h3>
       <p><a href="{{ fun.map_location }}" target="_blank">{{ fun.address }}</a></p>
-      <p>{{ fun.latitude}}, {{ fun.longitude }}</p>
+      <p>{{ fun.latitude }}, {{ fun.longitude }}</p>
       <hr>
     {% endfor %}
+  </div>
+  <div>
+    <p>- Source: <a href="https://www.austintexas.org/things-to-do/" target="_blank">Visit Austin</a></p>
   </div>
 </div>
 

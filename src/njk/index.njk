@@ -6,7 +6,16 @@
   <div class="row">
     <div class="col">
       <h1>Austin Tourism Guide</h1>
-        <p>Hempen halter mizzenmast deadlights gaff pillage starboard jack lee Blimey draught. Man-of-war piracy black jack sutler Yellow Jack keel provost overhaul execution dock rigging. Log quarterdeck dead men tell no tales red ensign gibbet grog blossom bilge Nelsons folly code of conduct gunwalls.</p>
+        <p>Years ago when people talked about Austin they would quickly mention the music. But that's just the beginning of what they're saying these days. Austin is also home to a wonderful ballet, world-class museums, one-of-a-kind shopping and beautiful outdoor spaces. You can just as easily spend your morning paddling the lake as you can strolling through a celebrated history museum. And it's okay if you don't have time to fit it all in, you can just come back and visit us again.</p>
+        {% for tease in austin.landmarks %}
+          <div class="card bg-dark col-sm-6 col-lg-4 mb-4" style="width: 18rem;">
+            <img class="card-img-top" src="img/landmarks/{{ tease.image }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-text"><a href="landmarks/{{ tease.slug }}.html">{{ tease.name }}</a></h5>
+            </div>
+          </div>
+        {% endfor %}
+        <p>- Source: <a href="https://www.austintexas.org/things-to-do/" target="_blank">Visit Austin</a></p>
       </div>
   </div>
 </div>

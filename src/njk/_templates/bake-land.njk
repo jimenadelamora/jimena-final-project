@@ -9,8 +9,8 @@
 {% block content %}
   <article class="container">
     <div class="row">
-      <div class="col-sm-4">
-          <img src="../landmarks/{{ image }}.jpg" alt="" class="img-fluid mb-4">
+      <div class="baked-image">
+          <img src="../img/landmarks/{{ image }}" alt="" class="img-fluid mb-4">
       </div>
       <div class="col-sm-12 col-lg-12">
           <h1>{{ name }}</h1>
@@ -18,8 +18,7 @@
           <h3>{{ location }} </h3>
           <h5>{{ established }}</h5>
           <h6>{{ activities }}</h6>
-          <p>{{ description }}</p>
-          <p>{{ blurb | safe }}</p>
+          <p>{{ description | safe }}</p>
       </div>
     </div>
   </article>

@@ -1,10 +1,12 @@
 // Custom variable overrides
 // See node_modules/bootstrap/scss/_variables.scss
 
-// $body-bg: black;
-// $body-color: white;
-// $link-hover-color: grey;
-// $font-family-sans-serif: "Helvetica Neue";
+$body-bg: black;
+$body-color: white;
+$link-hover-color: rgb(250, 209, 134);
+$link-color: orange;
+$font-family: 'Poppins', sans-serif;
+$font-weight: "bold";
 
 /* bootstrap */
 // Option A: Include all of Bootstrap
@@ -21,6 +23,18 @@
 // Import partials
 @import "nav";
 
+@import "jumbotron";
+
+@import "restaurants";
+
+@import "recreations";
+
+.container {
+  text-align: center;  
+}
+
 h3 {
   font-size: 1.5rem;
 }
+
+

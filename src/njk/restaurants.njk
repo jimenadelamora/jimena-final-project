@@ -4,14 +4,13 @@
 {% block content %}
 <article class="container">
   <h1>Austin restaurants</h1>
-  <p>Find the most delicious meal in the 512!</p>
+  <p>Much like the live music scene, Austin takes eating and drinking very seriously. While visiting, you should too. Austin’s culinary and cocktail scene has exploded over the past couple of years, allowing visitors to delight in a diversity of cuisines and experiences.</p>
     <ul class="list-unstyled">
       <div class= "row">
       {% for food in restaurants.restaurants %}
-        <div class= "col-sm-6 col-lg-6">
-          <li class="media">
-            {# images are not showing up #}
-            <img src="img/{{ food.image }}" class="mr-3" alt="...">
+        <div class= "col-sm-6 col-lg-4">
+          <li class="media mb-5">
+            <img src="../img/restaurants/{{ food.image }}" class="mr-3" alt="...">
             <div class="media-body">
               <h5 class="mt-0 mb-1"> {{ food.name }} </h5>
               <p>{{ food.address }}</p>
@@ -22,5 +21,6 @@
       {% endfor %}
       </div>
     </ul>
+  <p>- Source: <a href="https://www.austintexas.org/things-to-do/" target="_blank">Visit Austin</a></p>
 </article>
 {% endblock %}
