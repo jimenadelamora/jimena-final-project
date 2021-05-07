@@ -21,13 +21,27 @@
   <div>
     <h2>Activities</h2>
     <p>Things to do!</p>
-    <hr>
-    {% for fun in austin.activities %}
-      <h3><a href="{{ fun.url }}" target="_blank">{{ fun.activity }}</a></h3>
-      <p>{{ fun.date_time }}, {{ fun.address }}</p>
-    {% endfor %}
-    <hr>
+  {% for fun in austin.activities %}
+    <table class="table table-bordered w-fixed">
+      <thead>
+        <tr>
+          <th scope="col">Activity</th>
+          <th scope="col">Time</th>
+          <th scope="col">Location</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="{{ fun.url }}" target="_blank">{{ fun.activity }}</a></th>
+          <td>{{ fun.date_time }}</td>
+          <td>{{ fun.address }}</td>
+        </tr>
+      </tbody>
+    </table>
+  {% endfor %}
   </div>
+
   <div>
     <h2>Murals</h2>
     <p>Things to look at!</p>
